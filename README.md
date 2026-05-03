@@ -11,7 +11,7 @@ root access on shared cPanel hosting servers.
 
 ## Install (for EL8)
 
-``yum install https://github.com/wbdv/whm-root-ip-guard/raw/refs/heads/main/whm-root-ip-guard-1.0.0-2.el8.noarch.rpm``
+``yum install https://github.com/wbdv/whm-root-ip-guard/releases/download/v1.0.0/whm-root-ip-guard-1.0.0-2.el8.noarch.rpm``
 
 Edit ``/etc/whm-root-ip-guard/allowed_ips`` and add your admin IPs (one per line, CIDR supported).
 
