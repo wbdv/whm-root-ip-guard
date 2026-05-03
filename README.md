@@ -13,7 +13,7 @@ root access on shared cPanel hosting servers.
 
 ```bash
 yum install https://github.com/wbdv/whm-root-ip-guard/releases/download/v1.0.0/whm-root-ip-guard-1.0.0-2.el8.noarch.rpm
-``
+```
 
 Edit ``/etc/whm-root-ip-guard/allowed_ips`` and add your admin IPs (one per line, CIDR supported).
 
