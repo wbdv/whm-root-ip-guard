@@ -14,3 +14,12 @@ root access on shared cPanel hosting servers.
 ``yum install ``
 
 Edit ``/etc/whm-root-ip-guard/allowed_ips`` and add your admin IPs (one per line, CIDR supported).
+
+``
+chmod 600 /etc/whm-root-ip-guard/allowed_ips
+systemctl enable --now whm-root-ip-guard
+``
+
+The service will REFUSE to start with an empty allowlist to prevent locking yourself out of WHM.
+
+Watch it with ``journalctl -u whm-root-ip-guard.service -f``
