@@ -1,0 +1,6 @@
+[Unit]
+Description=Alert that whm-root-ip-guard failed
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/sh -c 'echo "whm-root-ip-guard failed on $(hostname) at $(date)" | mail -s "WHM guard down: $(hostname)" root'

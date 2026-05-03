@@ -1,0 +1,23 @@
+[Unit]
+Description=WHM root login IP guard
+After=network-online.target cpanel.service
+Wants=network-online.target
+OnFailure=whm-root-ip-guard-alert.service
+
+[Service]
+Type=simple
+ExecStartPre=/usr/sbin/whm_root_ip_guard.py --check
+ExecStart=/usr/sbin/whm_root_ip_guard.py
+Restart=on-failure
+RestartSec=5
+RestartPreventExitStatus=2
+StandardOutput=journal
+StandardError=journal
+
+# Conservative hardening that shouldn't break csf
+NoNewPrivileges=false
+ProtectHome=true
+PrivateTmp=false
+
+[Install]
+WantedBy=multi-user.target
