@@ -8,3 +8,9 @@ residue from blocked IPs.
 
 Designed to run alongside cPHulk and lfd as defense-in-depth for WHM
 root access on shared cPanel hosting servers.
+
+## Install (for EL8)
+
+``yum install ``
+
+Edit ``/etc/whm-root-ip-guard/allowed_ips`` and add your admin IPs (one per line, CIDR supported).
